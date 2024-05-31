@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import HomeLink from "@/components/home-link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="flex justify-center items-center min-h-full max-w-sm mx-auto px-3">
+        <body className={`${inter.className} w-full`}>
+            <HomeLink />
+            {children}
+        </body>
     </html>
   );
 }
