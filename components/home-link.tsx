@@ -7,6 +7,6 @@ export default function HomeLink() {
     const pathname = usePathname()
     
     return (
-        pathname !== '/' && <Link className="text-xs underline" href={'/'}>Atpakaļ</Link>
+        (pathname === '/' || pathname === '/auth') ? null : <Link className="text-xs underline" href={'/'}>Atpakaļ</Link>
     )
 }
